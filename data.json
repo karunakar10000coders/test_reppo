@@ -1,0 +1,29 @@
+{
+  "students": [
+    { "stu_id": 1, "stu_name": "Jennifer" },
+    { "stu_id": 2, "stu_name": "Michael" },
+    { "stu_id": 3, "stu_name": "Sophia" },
+    { "stu_id": 4, "stu_name": "Daniel" },
+    { "stu_id": 5, "stu_name": "Olivia" }
+  ],
+  "staff": [
+    { "_id": 101, "staff_name": "Robert Johnson", "role": "Teacher" },
+    { "_id": 102, "staff_name": "Emma Williams", "role": "Teacher" },
+    { "_id": 103, "staff_name": "James Brown", "role": "Coordinator" },
+    { "_id": 104, "staff_name": "Sophia Miller", "role": "Administrator" }
+  ],
+  "subjects": [
+    { "subject_id": 201, "subject_name": "Mathematics" },
+    { "subject_id": 202, "subject_name": "Physics" },
+    { "subject_id": 203, "subject_name": "Computer Science" },
+    { "subject_id": 204, "subject_name": "English" },
+    { "subject_id": 205, "subject_name": "History" }
+  ],
+  "classes": [
+    { "class_id": 301, "class_name": "10-A", "subject_id": 201 },
+    { "class_id": 302, "class_name": "10-B", "subject_id": 202 },
+    { "class_id": 303, "class_name": "11-A", "subject_id": 203 },
+    { "class_id": 304, "class_name": "11-B", "subject_id": 204 },
+    { "class_id": 305, "class_name": "12-A", "subject_id": 205 }
+  ]
+}
