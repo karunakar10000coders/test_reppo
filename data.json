@@ -4,7 +4,13 @@
     { "stu_id": 2, "stu_name": "Michael" },
     { "stu_id": 3, "stu_name": "Sophia" },
     { "stu_id": 4, "stu_name": "Daniel" },
-    { "stu_id": 5, "stu_name": "Olivia" }
+    { "stu_id": 5, "stu_name": "Daniel" },
+    { "stu_id": 6, "stu_name": "Daniel" },
+    { "stu_id": 7, "stu_name": "Daniel" },
+    { "stu_id": 8, "stu_name": "Daniel" },
+    { "stu_id": 9, "stu_name": "Daniel" },
+    { "stu_id": 10, "stu_name": "Daniel" },
+    { "stu_id": 11, "stu_name": "Olivia" }
   ],
   "staff": [
     { "_id": 101, "staff_name": "Robert Johnson", "role": "Teacher" },

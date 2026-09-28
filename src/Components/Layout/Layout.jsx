@@ -9,6 +9,8 @@ import {
 } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
 import { menuitems } from "../../Data/menuItems";
+import Students from "../../Pages/Students/Students";
+import Staff from "../../Pages/Staff/Staff";
 const { Header, Content, Footer, Sider } = Layout;
 
 const layoutStyle = {
@@ -63,7 +65,10 @@ const LayoutD = () => {
               background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}
-          ></div>
+          >
+            <Students />
+            <Staff />
+          </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>
           Ant Design ©{currentYear} Created by Ant UED
