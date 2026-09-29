@@ -9,10 +9,11 @@ const App = () => {
   getStudentsApiData();
   return (
     <>
-      <LayoutD />
       <Routes>
-        <Route path="/students" element={<Students />} />
-        <Route path="/staff" element={<Staff />} />
+        <Route path="/" element={<LayoutD />}>
+          <Route path="students" element={<Students />} />
+          <Route path="staff" element={<Staff />} />
+        </Route>
       </Routes>
     </>
   );

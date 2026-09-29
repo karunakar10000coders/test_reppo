@@ -1,13 +1,18 @@
-import { Button, Input, Table } from "antd";
+import { Button, Form, Input, Modal, Table } from "antd";
 import React, { useEffect, useState } from "react";
 import { getStudentsApiData } from "../../Services/api";
 import Search from "antd/es/input/Search";
 
 const Students = () => {
   const [studentsData, setStudentsData] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const columns = studentsData.length > 0 ? Object.keys(studentsData[0]) : [];
-  console.log(columns);
+  const [student, setStudent] = useState({
+    stu_id: 0,
+    stu_name: "",
+  });
+
+  const [form] = Form.useForm();
 
   const cols = [
     {
@@ -22,6 +27,23 @@ const Students = () => {
     },
   ];
 
+  const handleClick = () => {
+    setIsOpen(true);
+  };
+
+  const handleOk = () => {
+    form.resetFields();
+    setIsOpen(false);
+  };
+  const handleCancel = () => {
+    form.resetFields();
+    setIsOpen(false);
+  };
+
+  const onFinish = (values) => {
+    console.log(values);
+  };
+
   useEffect(() => {
     getStudentsApiData().then((res) => setStudentsData(res));
   }, []);
@@ -34,9 +56,52 @@ const Students = () => {
           <Input.Search></Input.Search>
         </div>
         <div>
-          <Button>Add Student</Button>
+          <Button onClick={handleClick}>Add Student</Button>
         </div>
       </div>
+      //modal
+      <Modal
+        title="Add Student"
+        closable={{ "aria-label": "Custom Close Button" }}
+        open={isOpen}
+      >
+        <Form
+          name="basic"
+          form={form}
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 16 }}
+          style={{ maxWidth: 600 }}
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          // onFinishFailed={onFinishFailed}
+          autoComplete="off"
+        >
+          <Form.Item
+            label="Student Name"
+            name="stu_name"
+            rules={[{ required: true, message: "Please input your name!" }]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item
+            label="Id"
+            name="stu_id"
+            rules={[{ required: true, message: "Please input your id!" }]}
+          >
+            <Input />
+          </Form.Item>
+
+          <Form.Item label={null}>
+            <Button type="primary" onClick={handleCancel}>
+              Cancel
+            </Button>
+            <Button type="primary" htmlType="submit">
+              Add
+            </Button>
+          </Form.Item>
+        </Form>
+      </Modal>
       <div style={{ marginTop: "14px" }}>
         {studentsData.length > 0 ? (
           <>

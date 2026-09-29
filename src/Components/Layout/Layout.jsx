@@ -1,17 +1,15 @@
 import React from "react";
-import {
-  DesktopOutlined,
-  FileOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-} from "@ant-design/icons";
+import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
 import { menuitems } from "../../Data/menuItems";
-import Students from "../../Pages/Students/Students";
-import Staff from "../../Pages/Staff/Staff";
+import { Outlet, useNavigate } from "react-router-dom";
 const { Header, Content, Footer, Sider } = Layout;
+import {
+  AppstoreOutlined,
+  BookOutlined,
+  TeamOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 
 const layoutStyle = {
   minHeight: "100vh",
@@ -27,6 +25,8 @@ const siderStyle = {
 };
 
 const LayoutD = () => {
+  const navigate = useNavigate();
+
   const [collapsed, setCollapsed] = React.useState(false);
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -47,7 +47,32 @@ const LayoutD = () => {
           //   theme="dark"
           mode="inline"
           defaultSelectedKeys={["1"]}
-          items={menuitems}
+          items={[
+            {
+              key: "students",
+              icon: React.createElement(UserOutlined),
+              label: "Students",
+              onClick: () => navigate("/students"),
+            },
+            {
+              key: "staff",
+              icon: React.createElement(TeamOutlined),
+              label: "Staff",
+              onClick: () => navigate("/staff"),
+            },
+            {
+              key: "subjects",
+              icon: React.createElement(BookOutlined),
+              label: "Subjects",
+              onClick: () => navigate("/subjects"),
+            },
+            {
+              key: "classes",
+              icon: React.createElement(AppstoreOutlined),
+              label: "Classes",
+              onClick: () => navigate("/classes"),
+            },
+          ]}
         />
       </Sider>
       <Layout>
@@ -66,8 +91,7 @@ const LayoutD = () => {
               borderRadius: borderRadiusLG,
             }}
           >
-            <Students />
-            <Staff />
+            <Outlet />
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>
