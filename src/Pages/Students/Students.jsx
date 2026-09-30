@@ -1,16 +1,12 @@
 import { Button, Form, Input, Modal, Table } from "antd";
 import React, { useEffect, useState } from "react";
-import { getStudentsApiData } from "../../Services/api";
+import { getStudentsApiData, postStudentsApiData } from "../../Services/api";
 import Search from "antd/es/input/Search";
 
 const Students = () => {
   const [studentsData, setStudentsData] = useState([]);
+  const [searchData, setSearchData] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-
-  const [student, setStudent] = useState({
-    stu_id: 0,
-    stu_name: "",
-  });
 
   const [form] = Form.useForm();
 
@@ -32,6 +28,13 @@ const Students = () => {
   };
 
   const handleOk = () => {
+    const payload = {
+      stu_id: form.getFieldValue("stu_id"),
+      stu_name: form.getFieldValue("stu_name"),
+    };
+
+    postStudentsApiData(payload);
+
     form.resetFields();
     setIsOpen(false);
   };
@@ -40,20 +43,31 @@ const Students = () => {
     setIsOpen(false);
   };
 
-  const onFinish = (values) => {
-    console.log(values);
+  const handleSearch = (e) => {
+    const inputSearch = e.target.value;
+    const filteredStudents = studentsData.filter((student) =>
+      student.stu_name.toLowerCase().includes(inputSearch.toLowerCase()),
+    );
+    setSearchData(filteredStudents);
   };
 
   useEffect(() => {
-    getStudentsApiData().then((res) => setStudentsData(res));
-  }, []);
+    getStudentsApiData().then((res) => {
+      setStudentsData(res);
+      setSearchData(res);
+    });
+  }, [studentsData]);
 
   return (
     <div>
       <h1>This is students page</h1>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <div>
-          <Input.Search></Input.Search>
+          <input
+            name="search"
+            placeholder="search name..."
+            onChange={handleSearch}
+          />
         </div>
         <div>
           <Button onClick={handleClick}>Add Student</Button>
@@ -64,6 +78,8 @@ const Students = () => {
         title="Add Student"
         closable={{ "aria-label": "Custom Close Button" }}
         open={isOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
       >
         <Form
           name="basic"
@@ -72,7 +88,7 @@ const Students = () => {
           wrapperCol={{ span: 16 }}
           style={{ maxWidth: 600 }}
           initialValues={{ remember: true }}
-          onFinish={onFinish}
+          // onFinish={}
           // onFinishFailed={onFinishFailed}
           autoComplete="off"
         >
@@ -91,25 +107,12 @@ const Students = () => {
           >
             <Input />
           </Form.Item>
-
-          <Form.Item label={null}>
-            <Button type="primary" onClick={handleCancel}>
-              Cancel
-            </Button>
-            <Button type="primary" htmlType="submit">
-              Add
-            </Button>
-          </Form.Item>
         </Form>
       </Modal>
       <div style={{ marginTop: "14px" }}>
         {studentsData.length > 0 ? (
           <>
-            <Table
-              dataSource={studentsData}
-              columns={cols}
-              pagination={false}
-            />
+            <Table dataSource={studentsData} columns={cols} pagination={true} />
           </>
         ) : (
           <>

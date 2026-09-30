@@ -1,35 +1,155 @@
 {
   "students": [
-    { "stu_id": 1, "stu_name": "Jennifer" },
-    { "stu_id": 2, "stu_name": "Michael" },
-    { "stu_id": 3, "stu_name": "Sophia" },
-    { "stu_id": 4, "stu_name": "Daniel" },
-    { "stu_id": 5, "stu_name": "Daniel" },
-    { "stu_id": 6, "stu_name": "Daniel" },
-    { "stu_id": 7, "stu_name": "Daniel" },
-    { "stu_id": 8, "stu_name": "Daniel" },
-    { "stu_id": 9, "stu_name": "Daniel" },
-    { "stu_id": 10, "stu_name": "Daniel" },
-    { "stu_id": 11, "stu_name": "Olivia" }
+    {
+      "stu_id": 1,
+      "stu_name": "Jennifer",
+      "id": "AEX-TSU2F2Y"
+    },
+    {
+      "stu_id": 2,
+      "stu_name": "Michael",
+      "id": "UQZaDY_JRWA"
+    },
+    {
+      "stu_id": 3,
+      "stu_name": "Sophia",
+      "id": "bMRTFhkGGoU"
+    },
+    {
+      "stu_id": 4,
+      "stu_name": "Daniel",
+      "id": "vnh6iYoDTz4"
+    },
+    {
+      "stu_id": 5,
+      "stu_name": "Daniel",
+      "id": "BH4r__y16Fc"
+    },
+    {
+      "stu_id": 6,
+      "stu_name": "Daniel",
+      "id": "UEs3O8vZ7BQ"
+    },
+    {
+      "stu_id": 7,
+      "stu_name": "Daniel",
+      "id": "1_o2BtuPEb0"
+    },
+    {
+      "stu_id": 8,
+      "stu_name": "Daniel",
+      "id": "1dOJBzzciC8"
+    },
+    {
+      "stu_id": 9,
+      "stu_name": "Daniel",
+      "id": "B2qu1h0h5I8"
+    },
+    {
+      "stu_id": 10,
+      "stu_name": "Daniel",
+      "id": "gocYak1WvVU"
+    },
+    {
+      "stu_id": 11,
+      "stu_name": "Olivia",
+      "id": "scs2DZpT7hE"
+    },
+    {
+      "stu_id": "1000",
+      "stu_name": "karunakar",
+      "id": "Yyk3C7Dh97o"
+    },
+    {
+      "stu_id": "1001",
+      "stu_name": "kristen",
+      "id": "rMXytT5-Ei4"
+    }
   ],
   "staff": [
-    { "_id": 101, "staff_name": "Robert Johnson", "role": "Teacher" },
-    { "_id": 102, "staff_name": "Emma Williams", "role": "Teacher" },
-    { "_id": 103, "staff_name": "James Brown", "role": "Coordinator" },
-    { "_id": 104, "staff_name": "Sophia Miller", "role": "Administrator" }
+    {
+      "_id": 101,
+      "staff_name": "Robert Johnson",
+      "role": "Teacher",
+      "id": "6ZHeB3UStOI"
+    },
+    {
+      "_id": 102,
+      "staff_name": "Emma Williams",
+      "role": "Teacher",
+      "id": "4vvKZUJRVho"
+    },
+    {
+      "_id": 103,
+      "staff_name": "James Brown",
+      "role": "Coordinator",
+      "id": "BpolhEcP1h0"
+    },
+    {
+      "_id": 104,
+      "staff_name": "Sophia Miller",
+      "role": "Administrator",
+      "id": "hLtDqxrs3jA"
+    }
   ],
   "subjects": [
-    { "subject_id": 201, "subject_name": "Mathematics" },
-    { "subject_id": 202, "subject_name": "Physics" },
-    { "subject_id": 203, "subject_name": "Computer Science" },
-    { "subject_id": 204, "subject_name": "English" },
-    { "subject_id": 205, "subject_name": "History" }
+    {
+      "subject_id": 201,
+      "subject_name": "Mathematics",
+      "id": "7KUySTjBXvc"
+    },
+    {
+      "subject_id": 202,
+      "subject_name": "Physics",
+      "id": "kdjjukstIw4"
+    },
+    {
+      "subject_id": 203,
+      "subject_name": "Computer Science",
+      "id": "8yfJUC-hlOA"
+    },
+    {
+      "subject_id": 204,
+      "subject_name": "English",
+      "id": "3hVuuGTKiwg"
+    },
+    {
+      "subject_id": 205,
+      "subject_name": "History",
+      "id": "Us4tmLWr9fg"
+    }
   ],
   "classes": [
-    { "class_id": 301, "class_name": "10-A", "subject_id": 201 },
-    { "class_id": 302, "class_name": "10-B", "subject_id": 202 },
-    { "class_id": 303, "class_name": "11-A", "subject_id": 203 },
-    { "class_id": 304, "class_name": "11-B", "subject_id": 204 },
-    { "class_id": 305, "class_name": "12-A", "subject_id": 205 }
-  ]
+    {
+      "class_id": 301,
+      "class_name": "10-A",
+      "subject_id": 201,
+      "id": "343MvsB-H-U"
+    },
+    {
+      "class_id": 302,
+      "class_name": "10-B",
+      "subject_id": 202,
+      "id": "NE6DYHs_bPo"
+    },
+    {
+      "class_id": 303,
+      "class_name": "11-A",
+      "subject_id": 203,
+      "id": "eE8obLWptGc"
+    },
+    {
+      "class_id": 304,
+      "class_name": "11-B",
+      "subject_id": 204,
+      "id": "aQhEZUGk0hE"
+    },
+    {
+      "class_id": 305,
+      "class_name": "12-A",
+      "subject_id": 205,
+      "id": "DvMAKrQkH5c"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
