@@ -1,5 +1,5 @@
 const port = 3000;
-const baseUrl = `http://localhost:${port}/`;
+const baseUrl = `https://json-server-910t.onrender.com/`;
 
 export const studentsUrl = `${baseUrl}students`;
 export const staffUrl = `${baseUrl}staff`;
