@@ -8,6 +8,7 @@ export const getStudentsApiData = async () => {
 
 export const postStudentsApiData = async (payload) => {
   const response = await axios.post(studentsUrl, payload);
+  console.log(response);
   return response.data;
 };
 

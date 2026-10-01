@@ -35,6 +35,8 @@ const Students = () => {
 
     postStudentsApiData(payload);
 
+    //
+
     form.resetFields();
     setIsOpen(false);
   };
@@ -56,7 +58,7 @@ const Students = () => {
       setStudentsData(res);
       setSearchData(res);
     });
-  }, [studentsData]);
+  }, []);
 
   return (
     <div>
@@ -112,7 +114,7 @@ const Students = () => {
       <div style={{ marginTop: "14px" }}>
         {studentsData.length > 0 ? (
           <>
-            <Table dataSource={studentsData} columns={cols} pagination={true} />
+            <Table dataSource={searchData} columns={cols} pagination={true} />
           </>
         ) : (
           <>
